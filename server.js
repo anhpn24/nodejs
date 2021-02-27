@@ -37,6 +37,7 @@ db.mongoose
   })
   .then(() => {
     console.log("Connected to the database!");
+    db.initial();
   })
   .catch((err) => {
     console.log("Cannot connect to the database!", err);
@@ -48,8 +49,10 @@ app.get("/", (req, res) => {
   res.json({ message: "Welcome to my API !!!" });
 });
 
-// [API] Tutorial
-require("./routes/tutorial.router")(app);
+// routes
+require("./routes/tutorial.routes")(app);
+require("./routes/auth.routes")(app);
+require("./routes/user.routes")(app);
 
 // set port, listen for requests
 app.listen(process.env.PORT || 3000);

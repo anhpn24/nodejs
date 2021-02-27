@@ -16,6 +16,6 @@ module.exports = (mongoose, mongoosePaginate) => {
 
   schema.plugin(mongoosePaginate);
 
-  const Tutorial = mongoose.model("tutorial", schema);
+  const Tutorial = mongoose.model("Tutorial", schema);
   return Tutorial;
 };
